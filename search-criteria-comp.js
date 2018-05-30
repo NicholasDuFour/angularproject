@@ -26,7 +26,7 @@ const searchCriteria = {
         };
         vm.searchMovie = (title) => {
           vm.title = vm.movie.title;
-          console.log(vm.title);
+          // console.log(vm.title);
           MovieService.getInfo(title).then((response) => {
             vm.thing = response;
             console.log(vm.thing);
