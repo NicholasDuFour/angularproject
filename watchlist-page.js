@@ -1,7 +1,10 @@
 "use strict";
-// const WatchList = {
-//
-// }
+const watchList = {
+  template: `
+  <a href="#!/search">Search</a>
+  <p>This is the Watchlist page!</p>
+  `
+}
 angular
   .module("app")
-  // .component("WatchList", WatchList)
+  .component("watchList", watchList)

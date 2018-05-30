@@ -6,6 +6,7 @@ const searchCriteria = {
     <input type="text" ng-model="$ctrl.movie.title" placeholder="Search...">
     <button ng-click="$ctrl.searchMovie($ctrl.movie.title);">Search</button>
   </form>
+  <a href="#!/watchlist"> Watchlist </a>
  <!-- <p> {{ $ctrl.movie.title}} </p> -->
 
 
