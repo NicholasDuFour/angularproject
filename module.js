@@ -8,7 +8,7 @@ angular
       template: `<search-criteria></search-criteria>`
     })
     .when("/watchlist", {
-      template: `<watch-list></watch-list>`
+      template: `<watchlist-page></watchlist-page>`
     })
     .otherwise ({
       redirectTo: "/search"

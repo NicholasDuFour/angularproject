@@ -2,8 +2,9 @@
 
 function MovieService($http) {
   let movieData = {};
+  let movieDetailData = {};
   const getInfo = (title) => {
-    console.log(title);
+    // console.log(title);
     let movieTitle = title;
     return $http ({
       url: "https://api.themoviedb.org/3/search/movie?api_key=32535e85345be91dd928261c4d1d2a0e&query=" + title,
@@ -15,21 +16,23 @@ function MovieService($http) {
     })
   } //end of getInfo
 
-  const newSearch = (movie) =>{
+  const getDetails = (movieid) =>{
     // console.log(movie.title);
-    let title = movie.title;
+    console.log(movieid);
+    
+    // let id = movieid;
     return $http ({
-      url: "https://api.themoviedb.org/3/search/movie?api_key=32535e85345be91dd928261c4d1d2a0e&query=" + title,
+      url: "https://api.themoviedb.org/3/movie/"+movieid+"?api_key=32535e85345be91dd928261c4d1d2a0e",
       method: "GET"
     }).then((response) =>{
-      movieData = response;
-      return movieData;
+      movieDetailData = response;
+      return movieDetailData;
     })
   }
 
   return {
     getInfo,
-    newSearch
+    getDetails
   }
 
 }

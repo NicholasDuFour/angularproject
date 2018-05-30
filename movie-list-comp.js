@@ -4,30 +4,37 @@ const movieList = {
   <div class="listItem" ng-repeat="movie in $ctrl.thing">
     <h3> {{ movie.title }} </h3>
     <p> {{ movie.overview || "No description available." }}</p>
+    <p> {{movie.id}} </p>
+    <!-- <p>{{$ctrl.detailInfo}}</p> -->
+    <button type="button">Add to Watchlist</button>
+    <button type="button" ng-click="$ctrl.details({id: movie.id})">Details</button>
     <!-- {{$ctrl.thing}} -->
   </div>
   `,
   bindings: {
-    thing: "<"
+    thing: "<",
+    detailInfo: "<",
+    details: "&"
   },
 
   controller: ["MovieService", function(MovieService) {
     const vm = this;
     vm.newData = [];
-    // vm.title = "dog";
 
-      MovieService.getInfo(vm.title).then((response) => {
+
+      // MovieService.getInfo(vm.title).then((response) => {
     // console.log(response.data.results);
 
     // vm.title = response.data.results[0].title;
-      response.data.results.forEach((x) => {
-        vm.newData.push({
-          title: x.title,
-          overview: x.overview
-        })
-      })//end of foreach
+      // response.data.results.forEach((x) => {
+      //   vm.newData.push({
+      //     title: x.title,
+      //     overview: x.overview,
+      //     // id: x.id
+      //   })
+      // })//end of foreach
 
-    }) //end of MovieService.getInfo()
+    // }) //end of MovieService.getInfo()
 
 
   }] //end of controller

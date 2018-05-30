@@ -11,7 +11,7 @@ const searchCriteria = {
 
 
 
-  <movie-list thing="$ctrl.thing"></movie-list>
+  <movie-list detail-info="$ctrl.detailInfo" thing="$ctrl.thing" details="$ctrl.details(id)"></movie-list>
 
 
   `,
@@ -30,9 +30,26 @@ const searchCriteria = {
           // console.log(vm.title);
           MovieService.getInfo(title).then((response) => {
             vm.thing = response.data.results;
+            response.data.results.forEach((x)=>{
+             let id = x.id;
+            //  console.log(id);
+             
+            })
             console.log(vm.thing);
             vm.movie = {};
-          });
+          }); // end of MovieService.getInfo
+
+
+        } // end of vm.searchMovie()
+
+        vm.details = (id) => {
+          console.log(id);
+          MovieService.getDetails(id).then((response) => {
+            console.log(response);
+            vm.detailInfo = response.data;
+            
+          })
+          
         }
 
 

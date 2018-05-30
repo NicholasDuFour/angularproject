@@ -1,5 +1,5 @@
 "use strict";
-const watchList = {
+const watchlistPage = {
   template: `
   <a href="#!/search">Search</a>
   <p>This is the Watchlist page!</p>
@@ -7,4 +7,4 @@ const watchList = {
 }
 angular
   .module("app")
-  .component("watchList", watchList)
+  .component("watchlistPage", watchlistPage)
