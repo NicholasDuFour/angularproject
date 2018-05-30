@@ -8,16 +8,16 @@ const searchCriteria = {
   </form>
   <p> {{ $ctrl.movie.title}} </p>
 
-  <div ng-repeat="movie in $ctrl.newData">
-    <h3> {{ movie.title }} </h3>
-    <p> {{ movie.overview }}</p>
-  </div>
-  
+
+
   <movie-list thing="thing"></movie-list>
 
 
   `,
-
+  // <div ng-repeat="movie in $ctrl.newData">
+  //   <h3> {{ movie.title }} </h3>
+  //   <p> {{ movie.overview }}</p>
+  // </div>
   controller: ["MovieService", function(MovieService){
     const vm = this;
         vm.newData = [];
