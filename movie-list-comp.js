@@ -4,6 +4,7 @@ const movieList = {
   <div class="listItem" ng-repeat="movie in $ctrl.newData">
     <h3> {{ movie.title }} </h3>
     <p> {{ movie.overview }}</p>
+    {{$ctrl.thing}}
   </div>
   `,
   bindings: {

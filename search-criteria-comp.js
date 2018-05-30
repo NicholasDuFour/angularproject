@@ -10,7 +10,7 @@ const searchCriteria = {
 
 
 
-  <movie-list thing="thing"></movie-list>
+  <movie-list thing="$ctrl.thing"></movie-list>
 
 
   `,
@@ -27,10 +27,12 @@ const searchCriteria = {
         vm.searchMovie = (title) => {
           vm.title = vm.movie.title;
           console.log(vm.title);
-          return MovieService.getInfo(title);
+          MovieService.getInfo(title).then((response) => {
+            vm.thing = response;
+            console.log(vm.thing);
+          });
         }
-        let thing = vm.searchMovie();
-        console.log(thing);
+
 
 // this is from the movie list component
           MovieService.getInfo(vm.title).then((response) => {
