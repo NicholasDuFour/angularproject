@@ -22,7 +22,7 @@ const searchCriteria = {
     const vm = this;
         vm.newData = [];
         vm.movie = {
-          title: "cat"
+          // title: "cat"
         };
         vm.searchMovie = (title) => {
           vm.title = vm.movie.title;
@@ -30,6 +30,7 @@ const searchCriteria = {
           MovieService.getInfo(title).then((response) => {
             vm.thing = response.data.results;
             console.log(vm.thing);
+            vm.movie = {};
           });
         }
 
