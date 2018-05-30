@@ -6,7 +6,7 @@ const searchCriteria = {
     <input type="text" ng-model="$ctrl.movie.title" placeholder="Search...">
     <button ng-click="$ctrl.searchMovie($ctrl.movie.title);">Search</button>
   </form>
-  <p> {{ $ctrl.movie.title}} </p>
+ <!-- <p> {{ $ctrl.movie.title}} </p> -->
 
 
 
@@ -28,7 +28,7 @@ const searchCriteria = {
           vm.title = vm.movie.title;
           // console.log(vm.title);
           MovieService.getInfo(title).then((response) => {
-            vm.thing = response;
+            vm.thing = response.data.results;
             console.log(vm.thing);
           });
         }

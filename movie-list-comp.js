@@ -1,10 +1,10 @@
 "use strict";
 const movieList = {
   template: `
-  <div class="listItem" ng-repeat="movie in $ctrl.newData">
+  <div class="listItem" ng-repeat="movie in $ctrl.thing">
     <h3> {{ movie.title }} </h3>
-    <p> {{ movie.overview }}</p>
-    {{$ctrl.thing}}
+    <p> {{ movie.overview || "No description available." }}</p>
+    <!-- {{$ctrl.thing}} -->
   </div>
   `,
   bindings: {
@@ -14,7 +14,7 @@ const movieList = {
   controller: ["MovieService", function(MovieService) {
     const vm = this;
     vm.newData = [];
-    vm.title = "dog";
+    // vm.title = "dog";
 
       MovieService.getInfo(vm.title).then((response) => {
     // console.log(response.data.results);
