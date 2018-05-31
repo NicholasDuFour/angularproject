@@ -39,8 +39,17 @@ function MovieService($http) {
     }
 
     //Remove title from watchlist
-    const removeTitle = (index) => {
-    watchList.splice(index, 1);
+    const removeTitle = (id) => {
+    // watchList.splice(index, 1);
+    console.log(id);
+    watchList.forEach((value, index)=>{
+      if (value === id){
+        console.log("test");
+        console.log(id, index);
+        watchList.splice(index, 1);
+      }
+
+    })
     }
 
     const getWatchList = () =>{
