@@ -5,7 +5,7 @@ const detailsBtn = {
   <div class="check-element funky-show-hide" ng-show="checked">
   <button type="button class="detail-btn">Close Details </button>
   </div>
-  Hello
+
   `,
   controller: function() {
     const vm = this;
