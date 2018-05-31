@@ -8,6 +8,7 @@ const movieList = {
     <!-- <p>{{$ctrl.detailInfo}}</p> -->
     <button type="button">Add to Watchlist</button>
     <button type="button" ng-click="$ctrl.details({id: movie.id})">Details</button>
+    <details-btn ng-click="$ctrl.details({id: movie.id})"></details-btn>
     <!-- {{$ctrl.thing}} -->
   </div>
   `,

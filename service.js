@@ -7,7 +7,7 @@ function MovieService($http) {
     // console.log(title);
     let movieTitle = title;
     return $http ({
-      url: "https://api.themoviedb.org/3/search/movie?api_key=APIKEYGOESHERE&query=" + title,
+      url: "https://api.themoviedb.org/3/search/movie?api_key=&query=" + title,
       method: "GET"
     }).then((response) =>{
       movieData = response;
@@ -22,7 +22,7 @@ function MovieService($http) {
 
     // let id = movieid;
     return $http ({
-      url: "https://api.themoviedb.org/3/movie/"+movieid+"?api_key=APIKEYGOESHERE",
+      url: "https://api.themoviedb.org/3/movie/"+movieid+"?api_key=",
       method: "GET"
     }).then((response) =>{
       movieDetailData = response;

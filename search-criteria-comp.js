@@ -2,16 +2,19 @@
 
 const searchCriteria = {
   template: `
-  <form>
-    <input type="text" ng-model="$ctrl.movie.title" placeholder="Search...">
-    <button ng-click="$ctrl.searchMovie($ctrl.movie.title);">Search</button>
-  </form>
-  <a href="#!/watchlist"> Watchlist </a>
- <!-- <p> {{ $ctrl.movie.title}} </p> -->
+  <div class="main-bar">
+    <form>
+      <input type="text" ng-model="$ctrl.movie.title" placeholder="Search...">
+      <button ng-click="$ctrl.searchMovie($ctrl.movie.title);">Search</button>
+    </form>
+    <a href="#!/watchlist"> Watchlist </a>
+  <!-- <p> {{ $ctrl.movie.title}} </p> -->
 
 
 
-  <movie-list detail-info="$ctrl.detailInfo" thing="$ctrl.thing" details="$ctrl.details(id)"></movie-list>
+    <movie-list detail-info="$ctrl.detailInfo" thing="$ctrl.thing" details="$ctrl.details(id)"></movie-list>
+
+  <div>
 
 
   `,
@@ -26,7 +29,11 @@ const searchCriteria = {
           // title: "cat"
         };
         vm.searchMovie = (title) => {
+          console.log("searchMovie");
+          
           vm.title = vm.movie.title;
+          console.log(vm.movie.title)
+
           // console.log(vm.title);
           MovieService.getInfo(title).then((response) => {
             vm.thing = response.data.results;
@@ -35,7 +42,7 @@ const searchCriteria = {
             //  console.log(id);
              
             })
-            console.log(vm.thing);
+            // console.log(vm.thing);
             vm.movie = {};
           }); // end of MovieService.getInfo
 
@@ -43,11 +50,10 @@ const searchCriteria = {
         } // end of vm.searchMovie()
 
         vm.details = (id) => {
-          console.log(id);
+          // console.log(id);
           MovieService.getDetails(id).then((response) => {
-            console.log(response);
+            // console.log(response.data);
             vm.detailInfo = response.data;
-            
           })
           
         }
