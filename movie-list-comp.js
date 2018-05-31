@@ -5,7 +5,7 @@ const movieList = {
   <div class="listItem" ng-repeat="movie in $ctrl.thing">
     <h3> {{ movie.title }} </h3>
     <img src="http://image.tmdb.org/t/p/w154{{ movie.poster_path }}"
-    <p> {{ $ctrl.detailInfo.tagline || "No description available." }}</p>
+    <p> {{ movie.details.tagline || "No description available." }}</p>
    
     <button type="button" ng-click="showme=true" ng-click="$ctrl.details({id: movie.id})" ng-hide = "showme" >Show Details</button>
     <button ng-show="showme" ng-click="showme=false">Hide Details</button>
