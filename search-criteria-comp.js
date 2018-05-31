@@ -25,7 +25,7 @@ const searchCriteria = {
         vm.teststuff = [];
 
         vm.searchMovie = (title) => {
-          
+
           vm.title = vm.movie.title;
           MovieService.getInfo(title).then((response) => {
             vm.thing = response.data.results;
@@ -34,7 +34,7 @@ const searchCriteria = {
             vm.thing.forEach((value,index)=>{
 
             //  console.log(vm.thing[index]);
-              
+
              MovieService.getDetails(value.id).then((response) => {
               // console.log(response.data);
               vm.detailInfo = response.data;
@@ -42,20 +42,20 @@ const searchCriteria = {
               vm.teststuff.push(vm.detailInfo)
               vm.thing[index].details = vm.detailInfo;
               console.log(vm.thing);
-              
-              
+
+
               // vm.detail.detailInfo = response.data;
-              
+
               // console.log(vm.movie.detailInfo);
             }) // end MovieService.getDetails
-             
+
             }) // end forEach
             // console.log(vm.thing);
-            // vm.movie = {};
+            vm.movie = {};
 
             console.log(vm.teststuff);
           }); // end of MovieService.getInfo
-          
+
         } // end of vm.searchMovie()
 
         vm.details = (id) => {
@@ -64,10 +64,10 @@ const searchCriteria = {
             // console.log(response.data);
             vm.detail.detailInfo = response.data;
             // console.log(vm.detail);
-            
+
           }) // end MovieService.getDetails
-          
-        } // end vm.details 
+
+        } // end vm.details
 
 
 // this is from the movie list component
