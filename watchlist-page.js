@@ -7,6 +7,7 @@ const watchlistPage = {
     <h3>{{ movie.title }}</h3>
     <img src="http://image.tmdb.org/t/p/w154{{ movie.poster_path }}">
     <p> {{ movie.tagline || "No description available." }}</p>
+    <button type="button" ng-click="$ctrl.removeTitle(movie.id, $index);">Remove from Watchlist</button>
   </div>
 
   `,
@@ -28,9 +29,12 @@ const watchlistPage = {
     //   vm.newTitle = {};
     // }
     //
+
     // //Remove title from watchlist
-    vm.removeTitle = (index)=> {
-    vm.watchList.splice(index, 1);
+    vm.removeTitle = (id, index)=> {
+    console.log(id);
+    vm.watchdata.splice(index, 1);
+    MovieService.removeTitle(id);
     }
 
   }] //end of controller
