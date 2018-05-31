@@ -10,7 +10,7 @@ const movieList = {
     <p>{{$ctrl.detailInfo.releases.countries[0].certification || "No ratiing available."}}</p>
   <!--  <p>{{$ctrl.detailInfo}}</p> -->
 {{movie}}
-    <button type="button">Add to Watchlist</button>
+    <button type="button" ng-click="$ctrl.addTitle();">Add to Watchlist</button>
     <button type="button" ng-click="$ctrl.details({id: movie.id})">Details</button>
     <details-btn ng-click="$ctrl.details({id: movie.id})"></details-btn>
     <!-- {{$ctrl.thing}} -->
@@ -19,12 +19,22 @@ const movieList = {
   bindings: {
     thing: "<",
     detailInfo: "<",
-    details: "&"
+    details: "&",
+    // addTitle: "&",
+    // removeTitle: "&"
   },
 
   controller: ["MovieService", function(MovieService) {
     const vm = this;
     vm.newData = [];
+    vm.addTitle = () =>{
+      console.log("Test");
+      MovieService.addTitle();
+    }
+    vm.getWatchList = () =>{
+      console.log("get list test");
+      MovieService.getWatchList();
+    }
 
 
       // MovieService.getInfo(vm.title).then((response) => {

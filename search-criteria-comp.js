@@ -7,7 +7,7 @@ const searchCriteria = {
       <input type="text" ng-model="$ctrl.movie.title" placeholder="Search...">
       <button ng-click="$ctrl.searchMovie($ctrl.movie.title);">Search</button>
     </form>
-    <a href="#!/watchlist"> Watchlist </a>
+    <a href="#!/watchlist"> Watchlist </a><img id="eye" src="view.png">
   <!-- <p> {{ $ctrl.movie.title}} </p> -->
   </div>
 
@@ -28,7 +28,7 @@ const searchCriteria = {
         };
         vm.searchMovie = (title) => {
           // console.log("searchMovie");
-          
+
           vm.title = vm.movie.title;
           // vm.id = vm.movie.id;
           // console.log(vm.movie.title)
@@ -37,19 +37,19 @@ const searchCriteria = {
           MovieService.getInfo(title).then((response) => {
             vm.thing = response.data.results;
             console.log(vm.thing);
-            
+
             response.data.results.forEach((x)=>{
              let id = x.id;
              MovieService.getDetails(id).then((response) => {
               // console.log(response);
-              
+
               // console.log(response.data);
               vm.detailInfo = response.data;
               console.log(vm.detailInfo);
-              
+
             }) // end MovieService.getDetails
             //  console.log(vm.detailInfo);
-             
+
             })
             // console.log(vm.thing);
             vm.movie = {};
@@ -63,8 +63,8 @@ const searchCriteria = {
             console.log(response.data);
             vm.detailInfo = response.data;
           }) // end MovieService.getDetails
-          
-        } // end vm.details 
+
+        } // end vm.details
 
 
 // this is from the movie list component
