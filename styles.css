@@ -41,7 +41,15 @@ p {
 movie-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; 
+}
 
+movie-list button {
+  /* display: flex; 
+  justify-content: space-between;   */
+  /* text-align: center; 
+  margin: auto;  */
+  align-items: flex-end;
 }
 
 .listItem {
@@ -63,6 +71,11 @@ input {
 
 .listItem img { 
   width: 154px;
-
   margin: 0 auto;
+}
+
+watchlist-page a {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
 }
