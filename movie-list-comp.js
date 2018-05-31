@@ -3,11 +3,13 @@ const movieList = {
   template: `
   <div class="listItem" ng-repeat="movie in $ctrl.thing">
     <h3> {{ movie.title }} </h3>
-    <p> {{ movie.overview || "No description available." }}</p>
+    {{ movie.poster_path }}
+    <p> {{ $ctrl.detailInfo.tagline || "No description available." }}</p>
     <p>{{$ctrl.detailInfo.genres}}</p>
     <p>{{$ctrl.detailInfo.runtime}} minutes</p>
     <p>{{$ctrl.detailInfo.releases.countries[0].certification || "No ratiing available."}}</p>
-    <p>{{$ctrl.detailInfo}}</p>
+  <!--  <p>{{$ctrl.detailInfo}}</p> -->
+{{movie}}
     <button type="button">Add to Watchlist</button>
     <button type="button" ng-click="$ctrl.details({id: movie.id})">Details</button>
     <details-btn ng-click="$ctrl.details({id: movie.id})"></details-btn>

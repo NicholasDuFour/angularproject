@@ -9,12 +9,10 @@ const searchCriteria = {
     </form>
     <a href="#!/watchlist"> Watchlist </a>
   <!-- <p> {{ $ctrl.movie.title}} </p> -->
-
-
+  <div>
 
     <movie-list detail-info="$ctrl.detailInfo" thing="$ctrl.thing" details="$ctrl.details(id)"></movie-list>
 
-  <div>
 
 
   `,
@@ -38,6 +36,8 @@ const searchCriteria = {
           // console.log(vm.title);
           MovieService.getInfo(title).then((response) => {
             vm.thing = response.data.results;
+            console.log(vm.thing);
+            
             response.data.results.forEach((x)=>{
              let id = x.id;
              MovieService.getDetails(id).then((response) => {
