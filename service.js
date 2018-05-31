@@ -7,7 +7,7 @@ function MovieService($http) {
     // console.log(title);
     let movieTitle = title;
     return $http ({
-      url: "https://api.themoviedb.org/3/search/movie?api_key=&query=" + title,
+      url: "https://api.themoviedb.org/3/search/movie?api_key=32535e85345be91dd928261c4d1d2a0e&query=" + title,
       method: "GET"
     }).then((response) =>{
       movieData = response;
@@ -17,12 +17,10 @@ function MovieService($http) {
   } //end of getInfo
 
   const getDetails = (movieid) =>{
-    // console.log(movie.title);
-    console.log(movieid);
+    // console.log(movieid);
 
-    // let id = movieid;
     return $http ({
-      url: "https://api.themoviedb.org/3/movie/"+movieid+"?api_key=",
+      url: "https://api.themoviedb.org/3/movie/"+movieid+"?api_key=32535e85345be91dd928261c4d1d2a0e&append_to_response=releases",
       method: "GET"
     }).then((response) =>{
       movieDetailData = response;

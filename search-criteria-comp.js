@@ -29,34 +29,42 @@ const searchCriteria = {
           // title: "cat"
         };
         vm.searchMovie = (title) => {
-          console.log("searchMovie");
+          // console.log("searchMovie");
           
           vm.title = vm.movie.title;
-          console.log(vm.movie.title)
+          // vm.id = vm.movie.id;
+          // console.log(vm.movie.title)
 
           // console.log(vm.title);
           MovieService.getInfo(title).then((response) => {
             vm.thing = response.data.results;
             response.data.results.forEach((x)=>{
              let id = x.id;
-            //  console.log(id);
+             MovieService.getDetails(id).then((response) => {
+              // console.log(response);
+              
+              // console.log(response.data);
+              vm.detailInfo = response.data;
+              console.log(vm.detailInfo);
+              
+            }) // end MovieService.getDetails
+            //  console.log(vm.detailInfo);
              
             })
             // console.log(vm.thing);
             vm.movie = {};
           }); // end of MovieService.getInfo
 
-
         } // end of vm.searchMovie()
 
         vm.details = (id) => {
           // console.log(id);
           MovieService.getDetails(id).then((response) => {
-            // console.log(response.data);
+            console.log(response.data);
             vm.detailInfo = response.data;
-          })
+          }) // end MovieService.getDetails
           
-        }
+        } // end vm.details 
 
 
 // this is from the movie list component
