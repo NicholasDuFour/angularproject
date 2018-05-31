@@ -3,7 +3,7 @@ const movieList = {
   template: `
   <div class="listItem" ng-repeat="movie in $ctrl.thing">
     <h3> {{ movie.title }} </h3>
-    {{ movie.poster_path }}
+    <img src="http://image.tmdb.org/t/p/w154{{ movie.poster_path }}"
     <p> {{ $ctrl.detailInfo.tagline || "No description available." }}</p>
     <p>{{$ctrl.detailInfo.genres}}</p>
     <p>{{$ctrl.detailInfo.runtime}} minutes</p>

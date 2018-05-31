@@ -9,7 +9,7 @@ const searchCriteria = {
     </form>
     <a href="#!/watchlist"> Watchlist </a>
   <!-- <p> {{ $ctrl.movie.title}} </p> -->
-  <div>
+  </div>
 
     <movie-list detail-info="$ctrl.detailInfo" thing="$ctrl.thing" details="$ctrl.details(id)"></movie-list>
 
