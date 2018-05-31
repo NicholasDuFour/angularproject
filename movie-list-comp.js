@@ -1,32 +1,33 @@
 "use strict";
 const movieList = {
   template: `
+
   <div class="listItem" ng-repeat="movie in $ctrl.thing">
     <h3> {{ movie.title }} </h3>
     <img src="http://image.tmdb.org/t/p/w154{{ movie.poster_path }}"
-    <p> {{ $ctrl.detailInfo.tagline || "No description available." }}</p>
-   
-    <button type="button" ng-click="showme=true" ng-click="$ctrl.details({id: movie.id})">Show Details</button>
-    <button ng-show="showme" ng-click="showme=false">Hide Details</button>
+    <p> {{ movie.details.tagline || "No description available." }}</p>
 
+    <button type="button" ng-click="showme=true" ng-click="$ctrl.details({id: movie.id})" ng-hide = "showme" >Show Details</button>
+    <button ng-show="showme" ng-click="showme=false">Hide Details</button>
+    <button type="button">Add to Watchlist</button>
     <h2 ng-show="showme">Movie Details</h2>
-    <p ng-show="showme" >{{$ctrl.detailInfo.genres}}</p>
-    <p ng-show="showme" >{{$ctrl.detailInfo.runtime}} minutes</p>
-    <p ng-show="showme" >{{$ctrl.detailInfo.releases.countries[0].certification || "No ratiing available."}}</p>
+    <p ng-show="showme" >Genre: {{$ctrl.detailInfo.genres}}</p>
+    <p ng-show="showme" > Runtime: {{$ctrl.detailInfo.runtime}} minutes</p>
+    <p ng-show="showme" >Rating: {{$ctrl.detailInfo.releases.countries[0].certification || "No rating available."}}</p>
   <!--  <p ng-show="showme" >{{$ctrl.detailInfo}}</p> -->
 <p ng-show="showme">{{movie}}</p>
 <details-btn ng-show="showme" ng-click="$ctrl.details({id: movie.id})"></details-btn>
-    <button type="button">Add to Watchlist</button>
 
     <!-- {{$ctrl.thing}} -->
   </div>
+
   `,
   bindings: {
     thing: "<",
     detailInfo: "<",
-    details: "&",
-    // addTitle: "&",
-    // removeTitle: "&"
+    teststuff: "<",
+    movie: "<",
+    details: "&"
   },
 
   controller: ["MovieService", function(MovieService) {

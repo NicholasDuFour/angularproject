@@ -11,31 +11,33 @@ const searchCriteria = {
   <!-- <p> {{ $ctrl.movie.title}} </p> -->
   </div>
 
-    <movie-list detail-info="$ctrl.detailInfo" thing="$ctrl.thing" details="$ctrl.details(id)"></movie-list>
-
-
+    <movie-list movie-details="$ctrl.movieDetails" detail-info="$ctrl.detailInfo" teststuff="$ctrl.teststuff" thing="$ctrl.thing" details="$ctrl.details(id)"></movie-list>
 
   `,
-  // <div ng-repeat="movie in $ctrl.newData">
-  //   <h3> {{ movie.title }} </h3>
-  //   <p> {{ movie.overview }}</p>
-  // </div>
   controller: ["MovieService", function(MovieService){
     const vm = this;
-        vm.newData = [];
         vm.movie = {
           // title: "cat"
         };
+        vm.detail = {
+
+        };
+        vm.teststuff = [];
+
         vm.searchMovie = (title) => {
+<<<<<<< HEAD
           // console.log("searchMovie");
 
           vm.title = vm.movie.title;
           // vm.id = vm.movie.id;
           // console.log(vm.movie.title)
+=======
+>>>>>>> master
 
-          // console.log(vm.title);
+          vm.title = vm.movie.title;
           MovieService.getInfo(title).then((response) => {
             vm.thing = response.data.results;
+<<<<<<< HEAD
             console.log(vm.thing);
 
             response.data.results.forEach((x)=>{
@@ -51,17 +53,44 @@ const searchCriteria = {
             //  console.log(vm.detailInfo);
 
             })
+=======
+            // console.log(vm.thing);
+
+            vm.thing.forEach((value,index)=>{
+
+            //  console.log(vm.thing[index]);
+
+             MovieService.getDetails(value.id).then((response) => {
+              // console.log(response.data);
+              vm.detailInfo = response.data;
+              // console.log(vm.detailInfo);
+              vm.teststuff.push(vm.detailInfo)
+              vm.thing[index].details = vm.detailInfo;
+              console.log(vm.thing);
+
+
+              // vm.detail.detailInfo = response.data;
+
+              // console.log(vm.movie.detailInfo);
+            }) // end MovieService.getDetails
+
+            }) // end forEach
+>>>>>>> master
             // console.log(vm.thing);
             vm.movie = {};
+
+            console.log(vm.teststuff);
           }); // end of MovieService.getInfo
 
         } // end of vm.searchMovie()
 
         vm.details = (id) => {
-          // console.log(id);
+          console.log(id);
           MovieService.getDetails(id).then((response) => {
-            console.log(response.data);
-            vm.detailInfo = response.data;
+            // console.log(response.data);
+            vm.detail.detailInfo = response.data;
+            // console.log(vm.detail);
+
           }) // end MovieService.getDetails
 
         } // end vm.details

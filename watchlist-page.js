@@ -1,7 +1,7 @@
 "use strict";
 const watchlistPage = {
   template: `
-  <a href="#!/search">Search</a>
+  <a href="#!/search">Search Movies</a>
   <p>This is the Watchlist page!</p>
   <p> {{ $ctrl.watchlist.title }} </p>
   `,
