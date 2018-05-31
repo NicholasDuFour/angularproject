@@ -51,7 +51,7 @@ const searchCriteria = {
              
             }) // end forEach
             // console.log(vm.thing);
-            // vm.movie = {};
+            vm.movie = {};
 
             console.log(vm.teststuff);
           }); // end of MovieService.getInfo
