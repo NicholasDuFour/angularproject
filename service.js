@@ -30,10 +30,12 @@ function MovieService($http) {
 
   //Declares watchlist, function to add title
     let watchList = [];
-    const addTitle = () =>{
-      console.log("Test for add title");
+    const addTitle = (id) =>{
+      // console.log(id);
       let newTitle = {};
-      watchList.push({newTitle});
+      watchList.push(id);
+      console.log(watchList);
+      return watchList;
     }
 
     //Remove title from watchlist
@@ -55,7 +57,8 @@ function MovieService($http) {
     getInfo,
     getDetails,
     addTitle,
-    removeTitle
+    removeTitle,
+    getWatchList
   }
 
 }

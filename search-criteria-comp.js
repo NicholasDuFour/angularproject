@@ -25,35 +25,13 @@ const searchCriteria = {
         vm.teststuff = [];
 
         vm.searchMovie = (title) => {
-<<<<<<< HEAD
-          // console.log("searchMovie");
 
-          vm.title = vm.movie.title;
-          // vm.id = vm.movie.id;
-          // console.log(vm.movie.title)
-=======
->>>>>>> master
+
 
           vm.title = vm.movie.title;
           MovieService.getInfo(title).then((response) => {
             vm.thing = response.data.results;
-<<<<<<< HEAD
-            console.log(vm.thing);
 
-            response.data.results.forEach((x)=>{
-             let id = x.id;
-             MovieService.getDetails(id).then((response) => {
-              // console.log(response);
-
-              // console.log(response.data);
-              vm.detailInfo = response.data;
-              console.log(vm.detailInfo);
-
-            }) // end MovieService.getDetails
-            //  console.log(vm.detailInfo);
-
-            })
-=======
             // console.log(vm.thing);
 
             vm.thing.forEach((value,index)=>{
@@ -75,7 +53,7 @@ const searchCriteria = {
             }) // end MovieService.getDetails
 
             }) // end forEach
->>>>>>> master
+
             // console.log(vm.thing);
             vm.movie = {};
 
