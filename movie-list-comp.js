@@ -7,15 +7,20 @@ const movieList = {
     <img src="http://image.tmdb.org/t/p/w154{{ movie.poster_path }}">
     <p> {{ movie.details.tagline || "No description available." }}</p>
 
-    <button type="button" ng-click="showme=true" ng-click="$ctrl.details({id: movie.id})" ng-hide = "showme" >Show Details</button>
+    <button type="button" ng-click="showme=true"  ng-hide = "showme" >Show Details</button>
     <button ng-show="showme" ng-click="showme=false">Hide Details</button>
     <button type="button" ng-click="$ctrl.addTitle(movie.id);">Add to Watchlist</button>
     <h2 ng-show="showme">Movie Details</h2>
-    <p ng-show="showme" >Genre: {{$ctrl.detailInfo.genres}}</p>
-    <p ng-show="showme" > Runtime: {{$ctrl.detailInfo.runtime}} minutes</p>
-    <p ng-show="showme" >Rating: {{$ctrl.detailInfo.releases.countries[0].certification || "No rating available."}}</p>
+    <p ng-show="showme" > Overview: {{movie.details.overview}} </p> 
+    <p ng-show="showme" > Runtime: {{movie.details.runtime}} minutes</p>
+    <p ng-show="showme" >Rating: {{movie.details.releases.countries[0].certification || "No rating available."}}</p>
+    <p ng-show="showme" > Review: {{movie.details.vote_average}} </p>
+    <p ng-show="showme">Genre:</p>
+    <div ng-repeat = "genre in movie.details.genres">
+    <p ng-show="showme" > {{genre.name}}</p>
+    </div>
   <!--  <p ng-show="showme" >{{$ctrl.detailInfo}}</p> -->
-<p ng-show="showme">{{movie}}</p>
+
 <details-btn ng-show="showme" ng-click="$ctrl.details({id: movie.id})"></details-btn>
 
     <!-- {{$ctrl.thing}} -->
