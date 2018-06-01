@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
 }
 
 html {
@@ -197,4 +198,47 @@ footer p {
   border-radius: 5px;
   width: 60%;
   padding: 7px;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.popup h3 {
+  margin: 5px auto;
+  /* font-size: .9em;
+  color: black; */
+}
+
+h5 {
+  /* font-size: 1rem; */
+  display: inline-block;
+  margin: 0;
+  text-transform: uppercase;
+  /* margin: 5px auto; */
+  font-size: .9em;
+  color: black;
+
+  /* color: #e00000; red */
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.popup p {
+  margin-top: 0;
+  /* margin-bottom: 4px; */
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.popup button {
+  margin: 5px auto;
 }
