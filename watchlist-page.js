@@ -1,9 +1,11 @@
 "use strict";
 const watchlistPage = {
   template: `
-  <a href="#!/search">Search Movies</a>
-  <p>This is the Watchlist page!</p>
-  <div ng-repeat="movie in $ctrl.watchdata">
+    <div class="main-bar">
+      <a href="#!/search">Search Movies</a>
+      <p>This is the Watchlist page!</p>
+    </div>
+  <div class="listItem" ng-repeat="movie in $ctrl.watchdata">
     <h3>{{ movie.title }}</h3>
     <img src="http://image.tmdb.org/t/p/w154{{ movie.poster_path }}">
     <p> {{ movie.tagline || "No description available." }}</p>

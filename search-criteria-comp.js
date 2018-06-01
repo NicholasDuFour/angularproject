@@ -4,10 +4,10 @@ const searchCriteria = {
   template: `
   <div class="main-bar">
     <form>
-      <input type="text" ng-model="$ctrl.movie.title" placeholder="Search...">
+      <input type="text" ng-model="$ctrl.movie.title" placeholder="Find some flicks...">
       <button ng-click="$ctrl.searchMovie($ctrl.movie.title);">Search</button>
     </form>
-    <a href="#!/watchlist"> Watchlist </a><img id="eye" src="view.png">
+    <a href="#!/watchlist"> Watchlist <img id="eye" src="view.png"></a>
   <!-- <p> {{ $ctrl.movie.title}} </p> -->
   </div>
 
