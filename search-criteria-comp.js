@@ -5,7 +5,7 @@ const searchCriteria = {
   <div class="main-bar">
     <form>
       <input type="text" ng-model="$ctrl.movie.title" placeholder="Find some flicks...">
-      <button ng-click="$ctrl.searchMovie($ctrl.movie.title);">Search</button>
+      <button ng-click="$ctrl.searchMovie($ctrl.movie.title);" ng-click="showimg= true" ng-hide="showimg">Search</button>
     </form>
     <a href="#!/watchlist"> Watchlist <img id="eye" src="view.png"></a>
   <!-- <p> {{ $ctrl.movie.title}} </p> -->
