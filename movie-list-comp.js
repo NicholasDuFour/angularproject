@@ -10,6 +10,10 @@ const movieList = {
     <button type="button" ng-click="showme=true"  ng-hide = "showme" >Show Details</button>
     <button ng-show="showme" ng-click="showme=false">Hide Details</button>
     <button type="button" ng-click="$ctrl.addTitle(movie.id);">Add to Watchlist</button>
+
+    <!-- POPUP ELEMENTS BELOW -->
+    <div ng-show="showme" class="popup">
+    <div class="popup-content">
     <h2 ng-show="showme">Movie Details</h2>
     <p ng-show="showme" > Overview: {{movie.details.overview}} </p> 
     <p ng-show="showme" > Runtime: {{movie.details.runtime}} minutes</p>
@@ -19,11 +23,11 @@ const movieList = {
     <div ng-repeat = "genre in movie.details.genres">
     <p ng-show="showme" > {{genre.name}}</p>
     </div>
-  <!--  <p ng-show="showme" >{{$ctrl.detailInfo}}</p> -->
+    <!--  <p ng-show="showme" >{{$ctrl.detailInfo}}</p> -->
 
-<details-btn ng-show="showme" ng-click="$ctrl.details({id: movie.id})"></details-btn>
-
-    <!-- {{$ctrl.thing}} -->
+    <button type="button" ng-click="showme=false">Close</button
+    </div>
+    </div>
   </div>
 
   `,
