@@ -5,14 +5,18 @@ const searchCriteria = {
   <div class="main-bar">
     <form>
       <input type="text" ng-model="$ctrl.movie.title" placeholder="Find some flicks...">
-      <button ng-click="$ctrl.searchMovie($ctrl.movie.title);" ng-click="showimg= true" ng-hide="showimg">Search</button>
+      <button ng-click="$ctrl.searchMovie($ctrl.movie.title);" ng-click="showimg = false" >Search</button>
     </form>
     <a href="#!/watchlist"> Watchlist <img id="eye" src="view.png"></a>
   <!-- <p> {{ $ctrl.movie.title}} </p> -->
   </div>
 
     <movie-list movie-details="$ctrl.movieDetails" detail-info="$ctrl.detailInfo" teststuff="$ctrl.teststuff" thing="$ctrl.thing" details="$ctrl.details(id)"></movie-list>
-
+    <div ng-hide="showimg" class="mainimg">
+      <img src="iawl.jpg">
+      <img src="maxandfuriosa.png">
+      <img src="pantherandfam.jpg">
+    </div>
   `,
   controller: ["MovieService", function(MovieService){
     const vm = this;
