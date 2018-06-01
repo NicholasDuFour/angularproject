@@ -1,7 +1,7 @@
 "use strict";
 
 function MovieService($http) {
-  let key = 
+  let key = "";
   let movieData = {};
   let movieDetailData = {};
   const getInfo = (title) => {

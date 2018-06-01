@@ -4,18 +4,22 @@ const movieList = {
 
   <div class="listItem" ng-repeat="movie in $ctrl.thing">
     <h3> {{ movie.title }} </h3>
-    <img src="http://image.tmdb.org/t/p/w154{{ movie.poster_path }}">
+    <div class="poster">
+    <img src="http://image.tmdb.org/t/p/w342{{ movie.poster_path }}">
+    </div>
     <p> {{ movie.details.tagline || "No description available." }}</p>
 
-    <button type="button" ng-click="showme=true"  ng-hide = "showme" >Show Details</button>
-    <button ng-show="showme" ng-click="showme=false">Hide Details</button>
-    <button type="button" ng-click="$ctrl.addTitle(movie.id, movie.title, movie.overview);">Add to Watchlist</button>
+      <div class="buttonholder">
+        <button type="button" ng-click="showme=true"  ng-hide = "showme" >Show Details</button>
+        <button ng-show="showme" ng-click="showme=false">Hide Details</button>
+        <button type="button" ng-click="$ctrl.addTitle(movie.id);">Add to Watchlist</button>
+      </div>
 
     <!-- POPUP ELEMENTS BELOW -->
     <div ng-show="showme" class="popup">
     <div class="popup-content">
     <h2 ng-show="showme">Movie Details</h2>
-    <p ng-show="showme" > Overview: {{movie.details.overview}} </p> 
+    <p ng-show="showme" > Overview: {{movie.details.overview}} </p>
     <p ng-show="showme" > Runtime: {{movie.details.runtime}} minutes</p>
     <p ng-show="showme" >Rating: {{movie.details.releases.countries[0].certification || "No rating available."}}</p>
     <p ng-show="showme" > Review: {{movie.details.vote_average}} </p>

@@ -2,21 +2,17 @@
   box-sizing: border-box;
 }
 
-html { 
+html {
   height: 100%;
 }
 
 body {
-
   height: 100%;
-
   margin: 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
   background-color: #e2e2e2; /*grey*/
 }
 
@@ -29,27 +25,45 @@ body {
   display: flex;
   justify-content: center;
 }
+/*Main bar styles*/
 
 .main-bar {
   display: flex;
-  justify-content: center;
-
+  /* justify-content: center; */
+  align-items: center;
+  background-color: white;
   width: 100%;
+  padding: 10px 0;
+  justify-content: space-around;
 }
 
 .main-bar a {
   text-transform: uppercase;
   font-weight: bold;
   text-decoration: none;
-  margin-left: 104px;
+  /* margin-left: 104px; */
+  font-size: 25px;
+}
+
+button {
+  height: 35px;
+  font-size: 1rem;
+  background-color: #e00000; /*red*/
+  color: white;
+  border-radius: 5px;
+}
+/*Styling for header*/
+
+h1 {
+  font-size: 55px;
 }
 
 #eye {
   height: 30px;
   width: 30px;
   position: relative;
-  bottom: 8px;
-  left: 8px;
+  bottom: -7px;
+  left: 1px;
 }
 
 h3 {
@@ -69,15 +83,15 @@ p {
 movie-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; 
+  justify-content: center;
 }
 
 
 
 movie-list button {
-  /* display: flex; 
+  /* display: flex;
   justify-content: space-between;   */
-  /* text-align: center; 
+  /* text-align: center;
   margin: auto;  */
   align-items: flex-end;
 }
@@ -85,23 +99,49 @@ movie-list button {
 .listItem {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   /* align-self: center; */
   height: auto;
-  min-width: 154px;
-  width: 20%;
-  border: 1px solid black;
-  margin: 5px;
+  min-width: 200px;
+  width: 325px;
+  /* border: 1px solid black; */
+  margin: 12px;
   padding: 5px;
-}
-
-input {
-  border: 1px solid black;
+  text-align: center;
+  box-shadow: 0 0 10px 0 rgba(204,204,204,1);
+  background-color: #f2f2f2;
   border-radius: 5px;
 }
 
+.poster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  /* width: 185px; */
+  margin: 0;
+}
+
 .listItem img {
-  width: 154px;
+  width: 72%;
+  /* 185px; */
   margin: 0 auto;
+}
+
+.buttonholder {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  /* border: 1px solid black; */
+  border: none;
+  border-bottom: 1px solid black;
+  /* border-radius: 5px; */
+  height: 35px;
+  width: 290px;
+  font-size: 1rem;
+  padding: 0 7px;
 }
 
 watchlist-page a {
@@ -110,7 +150,7 @@ watchlist-page a {
   text-decoration: none;
 }
 
-footer { 
+footer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,7 +163,7 @@ footer {
   margin: 0 auto;
 
   background-color: rgba(153, 153, 153, 0.9);
-  
+
   position: fixed;
   top: 0;
   left: 0;
