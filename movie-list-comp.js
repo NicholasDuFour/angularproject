@@ -49,27 +49,6 @@ const movieList = {
       console.log(id);
       MovieService.addTitle(id);
     }
-    // vm.getWatchList = () =>{
-    //   console.log("get list test");
-    //   MovieService.getWatchList();
-    // }
-
-
-      // MovieService.getInfo(vm.title).then((response) => {
-    // console.log(response.data.results);
-
-    // vm.title = response.data.results[0].title;
-      // response.data.results.forEach((x) => {
-      //   vm.newData.push({
-      //     title: x.title,
-      //     overview: x.overview,
-      //     // id: x.id
-      //   })
-      // })//end of foreach
-
-    // }) //end of MovieService.getInfo()
-
-
   }] //end of controller
 } //end of movieList
 

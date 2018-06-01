@@ -65,13 +65,6 @@ const watchlistPage = {
       });
     })
 
-    //Declares watchlist, function to add title
-    // vm.watchList = [];
-    // vm.addTitle = () =>{
-    //   vm.watchList.push(vm.newTitle);
-    //   vm.newTitle = {};
-    // }
-    //
 
     // //Remove title from watchlist
     vm.removeTitle = (id, index)=> {
