@@ -86,6 +86,16 @@ p {
   font-family: 'Raleway', sans-serif;
 }
 
+.mainimg {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+.mainimg img {
+  margin: 25px;
+}
+
 movie-list {
   display: flex;
   flex-wrap: wrap;
