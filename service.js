@@ -31,10 +31,10 @@ function MovieService($http) {
 
   //Declares watchlist, function to add title
     let watchList = [];
-    const addTitle = (id) =>{
-      // console.log(id);
+    const addTitle = (id, overview, runtime, certification, vote_average, genres) =>{
+      console.log(id, overview, runtime, certification, vote_average, genres);
       let newTitle = {};
-      watchList.push(id);
+      watchList.push(id, overview, runtime, certification, vote_average, genres);
       console.log(watchList);
       return watchList;
     }

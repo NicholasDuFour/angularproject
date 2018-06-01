@@ -44,7 +44,7 @@ const searchCriteria = {
               // console.log(vm.detailInfo);
               vm.teststuff.push(vm.detailInfo)
               vm.thing[index].details = vm.detailInfo;
-              console.log(vm.thing);
+              //console.log(vm.thing);
 
 
               // vm.detail.detailInfo = response.data;

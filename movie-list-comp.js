@@ -9,7 +9,7 @@ const movieList = {
 
     <button type="button" ng-click="showme=true"  ng-hide = "showme" >Show Details</button>
     <button ng-show="showme" ng-click="showme=false">Hide Details</button>
-    <button type="button" ng-click="$ctrl.addTitle(movie.id);">Add to Watchlist</button>
+    <button type="button" ng-click="$ctrl.addTitle(movie.id, movie.title, movie.overview);">Add to Watchlist</button>
 
     <!-- POPUP ELEMENTS BELOW -->
     <div ng-show="showme" class="popup">
