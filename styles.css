@@ -51,6 +51,12 @@ button {
   background-color: #e00000; /*red*/
   color: white;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+  background-color: black;
 }
 /*Styling for header*/
 
@@ -144,10 +150,23 @@ input {
   padding: 0 7px;
 }
 
+input:focus {
+  outline: 1px dotted grey;
+}
+
 watchlist-page a {
   text-transform: uppercase;
   font-weight: bold;
   text-decoration: none;
+}
+
+.watchListItems {
+  display: flex;
+  justify-content: center;
+}
+
+#userid {
+  color: black;
 }
 
 footer {
@@ -156,19 +175,26 @@ footer {
   align-items: center;
 }
 
+footer p {
+  margin: 2px;
+}
+
 .popup {
   height: 100%;
   width: 100vw;
-
   margin: 0 auto;
-
   background-color: rgba(153, 153, 153, 0.9);
-
   position: fixed;
   top: 0;
   left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .popup-content {
   background-color: #e2e2e2;
+  border-radius: 5px;
+  width: 60%;
+  padding: 7px;
 }

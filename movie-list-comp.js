@@ -18,7 +18,7 @@ const movieList = {
     <!-- POPUP ELEMENTS BELOW -->
     <div ng-show="showme" class="popup">
     <div class="popup-content">
-    <h2 ng-show="showme">Movie Details</h2>
+    <h3 ng-show="showme">Movie Details</h3>
     <p ng-show="showme" > Overview: {{movie.details.overview}} </p>
     <p ng-show="showme" > Runtime: {{movie.details.runtime}} minutes</p>
     <p ng-show="showme" >Rating: {{movie.details.releases.countries[0].certification || "No rating available."}}</p>
