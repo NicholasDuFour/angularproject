@@ -5,13 +5,13 @@ const searchCriteria = {
   <div class="main-bar">
     <form>
       <input type="text" ng-model="$ctrl.movie.title" placeholder="Find some flicks...">
-      <button ng-click="$ctrl.searchMovie($ctrl.movie.title);" ng-click="showimg = false" >Search</button>
+      <button ng-click="$ctrl.searchMovie($ctrl.movie.title); $ctrl.showme = false">Search</button>
     </form>
     <a href="#!/watchlist"> Watchlist <img id="eye" src="view.png"></a>
   </div>
 
     <movie-list movie-details="$ctrl.movieDetails" detail-info="$ctrl.detailInfo" teststuff="$ctrl.teststuff" thing="$ctrl.thing" details="$ctrl.details(id)"></movie-list>
-    <div ng-hide="showimg" class="mainimg">
+    <div ng-show="$ctrl.showme" class="mainimg">
       <img src="iawl.jpg">
       <img src="maxandfuriosa.png">
       <img src="pantherandfam.jpg">
@@ -68,6 +68,9 @@ const searchCriteria = {
           })//end of foreach
 
         }) //end of MovieService.getInfo()
+        vm.showme = ()=> {
+          vm.showme = true
+        }
 
   }] // end controller
 } // end component "searchCriteria"

@@ -173,6 +173,7 @@ watchlist-page a {
 
 .watchListItems {
   display: flex;
+  flex-direction: wrap;
   justify-content: center;
 }
 
